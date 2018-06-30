@@ -32,4 +32,6 @@ install:
   - curl -L -o packer.zip https://releases.hashicorp.com/packer/1.2.4/packer_1.2.4_linux_amd64.zip && unzip -d bin packer.zip
 
 script:
+  - while sleep 540; do echo "=====[ $SECONDS seconds still running ]====="; done &
   - PACKER_LOG=1 ./bin/packer build -only=qemu -var headless=true -var compression_level=9 freebsd-11.1-amd64.json
+  - kill %1
