@@ -98,7 +98,7 @@
       "scripts/freebsd/cleanup.sh"
     ]
   }],
-  "post-processors": [{
+  "post-processors": [[{
     "type": "vagrant",
     "compression_level": "{{user `compression_level`}}",
     "output": "freebsd-11.1-amd64-{{.Provider}}.box",
@@ -109,7 +109,7 @@
     "box_tag": "dipinhora/freebsd-11.1",
     "access_token": "{{user `cloud_token`}}",
     "version": "{{user `version`}}"
-  }],
+  }]],
   "variables": {
     "compression_level": "6",
     "cpus": "1",
