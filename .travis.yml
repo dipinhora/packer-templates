@@ -32,4 +32,4 @@ install:
   - curl -L -o packer.zip https://releases.hashicorp.com/packer/1.2.4/packer_1.2.4_linux_amd64.zip && unzip -d bin packer.zip
 
 script:
-  - packer build -only=qemu -var compression_level=9 freebsd-11.1-amd64.json
+  - PACKER_LOG=1 packer build -only=qemu -var compression_level=9 freebsd-11.1-amd64.json
