@@ -92,6 +92,7 @@
       "scripts/freebsd/virtualbox.sh",
       "scripts/freebsd/vmware.sh",
       "scripts/freebsd/init.sh",
+      "scripts/freebsd/ponyc-deps.sh",
       "scripts/common/vagrant.sh",
       "scripts/common/sshd.sh",
       "scripts/freebsd/cleanup.sh",
@@ -103,6 +104,12 @@
     "compression_level": "{{user `compression_level`}}",
     "output": "freebsd-11.1-amd64-{{.Provider}}.box",
     "vagrantfile_template": "vagrantfile_templates/freebsd.rb"
+  },
+  {
+    "type": "vagrant-cloud",
+    "box_tag": "dipinhora/freebsd-11.1",
+    "access_token": "{{user `cloud_token`}}",
+    "version": "{{user `version`}}"
   }],
   "variables": {
     "compression_level": "6",
@@ -113,6 +120,8 @@
     "iso_checksum_type": "sha256",
     "memory": "512",
     "mirror": "http://ftp.freebsd.org/pub/FreeBSD",
-    "ssh_timeout": "60m"
+    "ssh_timeout": "60m",
+    "cloud_token": "{{ env `VAGRANTCLOUD_TOKEN` }}",
+    "version": "1.0.{{timestamp}}"
   }
 }

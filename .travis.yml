@@ -1,8 +1,30 @@
-language: ruby
+language: c
+
+dist: trusty
+sudo: required
+
+branches:
+  only:
+    - dh_builds
+
 rvm:
   - 2.5
+
 install:
-  - bundle install
-  - curl -L -o packer.zip https://releases.hashicorp.com/packer/1.2.2/packer_1.2.2_linux_amd64.zip && unzip -d bin packer.zip
+  - sudo add-apt-repository ppa:linuxsimba/libvirt-udp-tunnel -y
+  - sudo apt-get update
+  - sudo apt-get install libvirt-bin libvirt-dev qemu-utils qemu -y
+  - sudo /etc/init.d/libvirt-bin restart
+  - sudo virsh pool-define-as --name default --type dir --target /var/lib/libvirt/images
+  - sudo virsh pool-autostart default || true
+  - sudo virsh pool-build default || true
+  - sudo virsh pool-start default || true
+  - sudo /etc/init.d/libvirt-bin restart
+  - sudo libvirtd --version
+  - wget https://releases.hashicorp.com/vagrant/2.1.2/vagrant_2.1.2_x86_64.deb
+  - sudo dpkg -i vagrant_2.1.2_x86_64.deb
+  - vagrant plugin install vagrant-libvirt
+  - curl -L -o packer.zip https://releases.hashicorp.com/packer/1.2.4/packer_1.2.4_linux_amd64.zip && unzip -d bin packer.zip
+
 script:
-  - PATH=$(pwd)/bin:$PATH bundle exec rake
+  - packer build -only=qemu -var compression_level=9 freebsd-11.1-amd64.json
