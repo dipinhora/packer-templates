@@ -95,8 +95,7 @@
       "scripts/freebsd/ponyc-deps.sh",
       "scripts/common/vagrant.sh",
       "scripts/common/sshd.sh",
-      "scripts/freebsd/cleanup.sh",
-      "scripts/freebsd/minimize.sh"
+      "scripts/freebsd/cleanup.sh"
     ]
   }],
   "post-processors": [{
