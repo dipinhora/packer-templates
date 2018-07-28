@@ -10,4 +10,4 @@ sudo pkg install -y gmake
 sudo pkg install -y pcre2
 sudo pkg install -y libunwind
 sudo pkg install -y libressl-devel
-sudo pkg add https://pkg.freebsd.org/FreeBSD:11:amd64/release_2/All/llvm39-3.9.1_8.txz
+sudo pkg add http://pkg.freebsd.org/FreeBSD:11:amd64/release_2/All/llvm39-3.9.1_8.txz
