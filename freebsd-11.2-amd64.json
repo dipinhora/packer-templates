@@ -115,7 +115,7 @@
     "cpus": "1",
     "disk_size": "40000",
     "headless": "false",
-    "iso_checksum": "d0a30c179c9a31876ff076d4047fa7d956085b01fda83af431e3febab2a9b029",
+    "iso_checksum": "710d237907f1753dbfbecb1186e401d9635156eeef6914f24f632f3219e59d3b",
     "iso_checksum_type": "sha256",
     "memory": "512",
     "mirror": "http://ftp.freebsd.org/pub/FreeBSD",
