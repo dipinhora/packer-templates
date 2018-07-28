@@ -117,7 +117,7 @@
     "headless": "false",
     "iso_checksum": "710d237907f1753dbfbecb1186e401d9635156eeef6914f24f632f3219e59d3b",
     "iso_checksum_type": "sha256",
-    "memory": "512",
+    "memory": "1024",
     "mirror": "http://ftp.freebsd.org/pub/FreeBSD",
     "ssh_timeout": "60m",
     "cloud_token": "{{ env `VAGRANTCLOUD_TOKEN` }}",
