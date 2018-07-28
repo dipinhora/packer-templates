@@ -33,5 +33,5 @@ install:
 
 script:
   - while sleep 540; do echo "=====[ $SECONDS seconds still running ]====="; done &
-  - PACKER_LOG=1 ./bin/packer build -only=qemu -var headless=true -var compression_level=9 freebsd-11.1-amd64.json
+  - PACKER_LOG=1 ./bin/packer build -only=qemu -var headless=true -var compression_level=9 freebsd-11.2-amd64.json
   - kill %1
