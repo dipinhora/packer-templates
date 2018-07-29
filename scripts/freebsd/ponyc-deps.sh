@@ -12,4 +12,4 @@ sudo pkg install -y libedit
 sudo pkg install -y libxml2
 sudo pkg install -y python27
 sudo pkg install -y perl5
-sudo pkg add http://pkg.freebsd.org/FreeBSD:11:amd64/release_2/All/llvm39-3.9.1_8.txz
+sudo pkg add http://pkg.freebsd.org/FreeBSD:11:amd64/release_1/All/llvm39-3.9.1_6.txz
